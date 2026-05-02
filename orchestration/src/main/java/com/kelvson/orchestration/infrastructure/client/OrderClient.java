@@ -32,6 +32,10 @@ public class OrderClient {
         );
     }
 
+    public void delete(Long orderId){
+        restTemplate.delete(AppConstants.ORDER_BASE_HTTP_PATH + orderId, Boolean.class);
+    }
+
     public void confirm(Long orderId){
         restTemplate.postForLocation(
           AppConstants.ORDER_BASE_HTTP_PATH + orderId + "/confirm",
