@@ -26,26 +26,26 @@ public class OrderClient {
     public boolean exists(Long orderId) {
         return Boolean.TRUE.equals(
                 restTemplate.getForObject(
-                        AppConstants.ORDER_SERVICE_URL + "/" + orderId + "/exists",
+                        AppConstants.buildOrderUrl(orderId, AppConstants.EXIST_ENDPOINT),
                         Boolean.class
                 )
         );
     }
 
     public void delete(Long orderId){
-        restTemplate.delete(AppConstants.ORDER_SERVICE_URL + "/" + orderId);
+        restTemplate.delete(AppConstants.buildOrderUrl(orderId));
     }
 
     public void confirm(Long orderId){
         restTemplate.postForLocation(
-          AppConstants.ORDER_SERVICE_URL + "/" + orderId + "/confirm",
+          AppConstants.buildOrderUrl(orderId, AppConstants.CONFIRM_ENDPOINT),
             null
         );
     }
 
     public void cancel(Long orderId){
         restTemplate.postForLocation(
-            AppConstants.ORDER_SERVICE_URL + "/" + orderId + "/cancel",
+            AppConstants.buildOrderUrl(orderId, AppConstants.CANCEL_ENDPOINT),
             null
         );
     }
