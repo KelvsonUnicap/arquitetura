@@ -1,5 +1,6 @@
 package com.kelvson.orchestration.infrastructure.client;
 
+import com.kelvson.orchestration.util.AppConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -13,9 +14,9 @@ public class RestaurantClient {
         this.restTemplate = restTemplate;
     }
 
-    public void validate(Long id){
+    public void validate(Long restaurantId){
         restTemplate.getForObject(
-                "http://restaurant-service:8080/restaurants" + id, void.class
+                AppConstants.buildRestaurantUrl(restaurantId), void.class
         );
     }
 }
