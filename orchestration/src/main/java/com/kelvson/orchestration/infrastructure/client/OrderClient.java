@@ -17,7 +17,7 @@ public class OrderClient {
 
     public Long create(CreateOrderRequest request){
         return restTemplate.postForObject(
-                AppConstants.ORDER_BASE_HTTP_PATH,
+                AppConstants.ORDER_SERVICE_URL,
                 request,
                 Long.class
         );
@@ -26,26 +26,26 @@ public class OrderClient {
     public boolean exists(Long orderId) {
         return Boolean.TRUE.equals(
                 restTemplate.getForObject(
-                        AppConstants.ORDER_BASE_HTTP_PATH + orderId + "/exists",
+                        AppConstants.ORDER_SERVICE_URL + "/" + orderId + "/exists",
                         Boolean.class
                 )
         );
     }
 
     public void delete(Long orderId){
-        restTemplate.delete(AppConstants.ORDER_BASE_HTTP_PATH + orderId, Boolean.class);
+        restTemplate.delete(AppConstants.ORDER_SERVICE_URL + "/" + orderId);
     }
 
     public void confirm(Long orderId){
         restTemplate.postForLocation(
-          AppConstants.ORDER_BASE_HTTP_PATH + orderId + "/confirm",
+          AppConstants.ORDER_SERVICE_URL + "/" + orderId + "/confirm",
             null
         );
     }
 
     public void cancel(Long orderId){
         restTemplate.postForLocation(
-            AppConstants.ORDER_BASE_HTTP_PATH + orderId + "/cancel",
+            AppConstants.ORDER_SERVICE_URL + "/" + orderId + "/cancel",
             null
         );
     }
