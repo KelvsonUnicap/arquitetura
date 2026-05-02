@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(AppConstants.ORDER_PATH)
+@RequestMapping(AppConstants.ORDER_BASE_PATH)
 public class OrchestrationController {
 
     private final CreateOrderOrchestrator orchestrator;
