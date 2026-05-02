@@ -1,7 +1,7 @@
 package com.kelvson.order.domain;
 
 public enum Status {
-    PROCESSING {
+    PENDING {
         @Override
         public void next(Order order){
             order.setStatus(PAID);
