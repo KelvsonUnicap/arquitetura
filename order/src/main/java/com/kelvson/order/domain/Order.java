@@ -42,14 +42,7 @@ public class Order {
     public Order(Long restaurantId, Long customerId, Double totalAmount){
         this.restaurantId = restaurantId;
         this.customerId = customerId;
-        this.totalAmount = totalAmount;
-        this.status = Status.PENDING;
-    }
-
-    public void nextStatus(){
-        status.next(this);
-    }
-    public void cancel(){
-        status.cancel(this);
-    }
+        this.totalAmount = totalAmount; this.status = Status.PENDING; }
+    public void nextStatus() { status.next(this); }
+    public void cancel(){ status.cancel(this); }
 }
