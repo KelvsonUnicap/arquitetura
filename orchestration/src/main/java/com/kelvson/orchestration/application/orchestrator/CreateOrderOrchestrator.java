@@ -1,5 +1,6 @@
-package com.kelvson.orchestration.application;
+package com.kelvson.orchestration.application.orchestrator;
 
+import com.kelvson.orchestration.application.usecase.CreateOrderUseCase;
 import com.kelvson.orchestration.infrastructure.client.OrderClient;
 import com.kelvson.orchestration.infrastructure.client.PaymentClient;
 import com.kelvson.orchestration.infrastructure.client.RestaurantClient;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateOrderOrchestrator {
+public class CreateOrderOrchestrator implements CreateOrderUseCase {
 
     private final RestaurantClient restaurantClient;
     private final OrderClient orderClient;
