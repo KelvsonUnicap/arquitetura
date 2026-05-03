@@ -36,17 +36,17 @@ public class OrderClient {
         restTemplate.delete(AppConstants.buildOrderUrl(orderId));
     }
 
-    public void confirm(Long orderId){
-        restTemplate.postForLocation(
-          AppConstants.buildOrderUrl(orderId, AppConstants.CONFIRM_ENDPOINT),
-            null
-        );
-    }
+//    public void confirm(Long orderId){
+//        restTemplate.postForLocation(
+//          AppConstants.buildOrderUrl(orderId, AppConstants.CONFIRM_ENDPOINT),
+//            null
+//        );
+//    }
 
-    public void cancel(Long orderId){
-        restTemplate.postForLocation(
-            AppConstants.buildOrderUrl(orderId, AppConstants.CANCEL_ENDPOINT),
-            null
-        );
-    }
+//    public void cancel(Long orderId){
+//        restTemplate.postForLocation(
+//            AppConstants.buildOrderUrl(orderId, AppConstants.CANCEL_ENDPOINT),
+//            null
+//        );
+//    }
 }
