@@ -9,9 +9,9 @@ public class AppConstants {
     public static final String CONFIRM_ENDPOINT = "/confirm";
     public static final String CANCEL_ENDPOINT = "/cancel";
 
-    public static final String ORDER_SERVICE_URL = "http://order-service:8080/orders";
-    public static final String PAYMENT_SERVICE_URL = "http://payment-service:8080/payments";
-    public static final String RESTAURANT_SERVICE_URL = "http://restaurant-service:8080/restaurants";
+    public static final String ORDER_SERVICE_URL = "http://localhost:8081/orders";
+    public static final String PAYMENT_SERVICE_URL = "http://localhost:8082/payments";
+    public static final String RESTAURANT_SERVICE_URL = "http://localhost:8083/restaurants";
 
     public static String buildOrderUrl(Long orderId, String endpoint){
         return String.format("%s/%d%s", ORDER_SERVICE_URL, orderId, endpoint);
