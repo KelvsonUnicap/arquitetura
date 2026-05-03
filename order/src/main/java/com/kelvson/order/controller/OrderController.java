@@ -1,20 +1,38 @@
 package com.kelvson.order.controller;
 
 import com.kelvson.order.dto.CreateOrderRequest;
+import com.kelvson.order.service.OrderService;
 import com.kelvson.order.util.AppConstants;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(AppConstants.ORDER_BASE_PATH)
 public class OrderController {
 
-    @PostMapping(value={"","/"})
-    public ResponseEntity<Long> create(@RequestBody @Valid CreateOrderRequest request){
-        return null;
+    private final OrderService orderService;
+
+    public OrderController(@Autowired OrderService orderService){
+        this.orderService = orderService;
+    }
+
+    @PostMapping
+    public Long create(@RequestBody @Valid CreateOrderRequest request){
+        return orderService.save(request);
+    }
+
+    @GetMapping("/{id}/exists")
+    public boolean exists(@PathVariable Long id){
+        if(orderService.exists(id)){
+            return true;
+        }
+        return false;
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        orderService.delete(id);
     }
 }
