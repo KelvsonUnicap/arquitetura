@@ -19,4 +19,12 @@ public class OrderService {
         Order order = new Order(request.restaurantId(), request.amount());
         return orderRepository.save(order).getId();
     }
+
+    public boolean exists(Long id){
+        return orderRepository.findById(id).isPresent();
+    }
+
+    public void delete(Long id){
+        orderRepository.findById(id).ifPresent(orderRepository::delete);
+    }
 }
