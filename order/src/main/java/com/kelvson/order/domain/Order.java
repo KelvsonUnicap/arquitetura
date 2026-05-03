@@ -21,9 +21,6 @@ public class Order {
     @Column(name="restaurant_id")
     private Long restaurantId;
 
-    @Column(name="customer_id")
-    private Long customerId;
-
     @Setter
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -39,9 +36,8 @@ public class Order {
     @Column(name="updated_at")
     private LocalDateTime updatedAt;
 
-    public Order(Long restaurantId, Long customerId, Double totalAmount){
+    public Order(Long restaurantId, Double totalAmount){
         this.restaurantId = restaurantId;
-        this.customerId = customerId;
         this.totalAmount = totalAmount;
         this.status = Status.PENDING; }
 
