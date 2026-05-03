@@ -16,7 +16,7 @@ public class OrderService {
     }
 
     public Long save(CreateOrderRequest request){
-        Order order = new Order(request.restaurantId(), 1L, request.amount());
+        Order order = new Order(request.restaurantId(), request.amount());
         return orderRepository.save(order).getId();
     }
 }
