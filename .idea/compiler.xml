@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for orchestration" enabled="true">
+      <profile name="Annotation profile for order" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -11,8 +11,8 @@
         </processorPath>
         <module name="payment" />
         <module name="orchestration" />
-        <module name="restaurant" />
         <module name="order" />
+        <module name="restaurant" />
       </profile>
     </annotationProcessing>
   </component>
