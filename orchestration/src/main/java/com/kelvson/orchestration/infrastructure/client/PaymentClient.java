@@ -1,5 +1,7 @@
 package com.kelvson.orchestration.infrastructure.client;
 
+import com.kelvson.orchestration.interfaces.dto.PaymentRequest;
+import com.kelvson.orchestration.util.AppConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;

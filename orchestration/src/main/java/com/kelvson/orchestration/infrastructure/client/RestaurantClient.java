@@ -14,9 +14,9 @@ public class RestaurantClient {
         this.restTemplate = restTemplate;
     }
 
-//    public void validate(Long restaurantId){
-//        restTemplate.getForObject(
-//                AppConstants.buildRestaurantUrl(restaurantId), void.class
-//        );
-//    }
+    public void validate(Long restaurantId){
+        restTemplate.getForObject(
+                AppConstants.buildRestaurantUrl(restaurantId), void.class
+        );
+    }
 }

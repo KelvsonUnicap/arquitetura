@@ -25,10 +25,7 @@ public class OrderController {
 
     @GetMapping("/{id}/exists")
     public boolean exists(@PathVariable Long id){
-        if(orderService.exists(id)){
-            return true;
-        }
-        return false;
+        return orderService.exists(id);
     }
 
     @DeleteMapping("/{id}")

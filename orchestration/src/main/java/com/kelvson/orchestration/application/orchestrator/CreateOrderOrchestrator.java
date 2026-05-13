@@ -33,7 +33,7 @@ public class CreateOrderOrchestrator implements CreateOrderUseCase {
      * */
 
     public void execute(CreateOrderRequest request){
-//        restaurantClient.validate(request.restaurantId());
+        restaurantClient.validate(request.restaurantId());
         Long orderId = orderClient.create(request);
 //        boolean approved = paymentClient.process(orderId, request.amount());
 
