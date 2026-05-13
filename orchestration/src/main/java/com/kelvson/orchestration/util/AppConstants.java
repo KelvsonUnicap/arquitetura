@@ -10,7 +10,7 @@ public class AppConstants {
     public static final String CANCEL_ENDPOINT = "/cancel";
 
     public static final String ORDER_SERVICE_URL = "http://localhost:8082/orders";
-//    public static final String PAYMENT_SERVICE_URL = "http://payment-service:8083/payments";
+    public static final String PAYMENT_SERVICE_URL = "http://localhost:8083/payments";
     public static final String RESTAURANT_SERVICE_URL = "http://localhost:8084/restaurants";
 
     public static String buildOrderUrl(Long orderId, String endpoint){

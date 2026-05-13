@@ -15,10 +15,10 @@ public class PaymentClient {
         this.restTemplate = restTemplate;
     }
 
-//    public boolean process(Long orderId, Double amount){
-//        return Boolean.TRUE.equals(restTemplate.postForObject(
-//                AppConstants.PAYMENT_SERVICE_URL,
-//                new PaymentRequest(orderId, amount),
-//                Boolean.class));
-//    }
+    public boolean process(Long orderId, Double amount){
+        return Boolean.TRUE.equals(restTemplate.postForObject(
+                AppConstants.PAYMENT_SERVICE_URL,
+                new PaymentRequest(orderId, amount),
+                Boolean.class));
+    }
 }
