@@ -3,8 +3,8 @@ package com.kelvson.restaurant.controller;
 import com.kelvson.restaurant.dto.CreateRestaurantRequest;
 import com.kelvson.restaurant.service.RestaurantService;
 import com.kelvson.restaurant.util.AppConstants;
-import jakarta.validation.OverridesAttribute;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,9 +22,10 @@ public class RestaurantController {
         return restaurantService.save(request);
     }
 
-    @GetMapping("/{id}/exists")
-    public boolean exists(@PathVariable Long id){
-        return restaurantService.exists(id);
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void exists(@PathVariable Long id){
+        System.out.println("Validano aqui no restaurant");
     }
 
     @DeleteMapping("/{id}")

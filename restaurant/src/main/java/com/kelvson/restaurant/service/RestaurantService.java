@@ -4,7 +4,9 @@ import com.kelvson.restaurant.domain.Restaurant;
 import com.kelvson.restaurant.dto.CreateRestaurantRequest;
 import com.kelvson.restaurant.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RestaurantService {
     private final RestaurantRepository restaurantRepository;
 
